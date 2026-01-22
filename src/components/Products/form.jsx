@@ -63,10 +63,10 @@ const Form = ({ selectedProduct, handleProductUpdate, handleProductCreate, setPr
 
 
     if(updatedProduct.name === '' || updatedProduct.name === null) {
-      alert('El nombre del producto no puede estar vacio');
+      alert('Nombre no valido');
       return;
     }else if(updatedProduct.category === null || updatedProduct.category === undefined) {
-      alert('La categoria del producto no puede estar vacia');
+      alert('Seleccione una categoria');
       return;
     }else if(!updatedProduct.price || updatedProduct.price <= 0) {
       alert('El precio no es valido');
