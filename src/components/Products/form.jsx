@@ -61,6 +61,18 @@ const Form = ({ selectedProduct, handleProductUpdate, handleProductCreate, setPr
       iva: parseInt(formValues.iva),
     };
 
+
+    if(updatedProduct.name === '' || updatedProduct.name === null) {
+      alert('El nombre del producto no puede estar vacio');
+      return;
+    }else if(updatedProduct.category === null || updatedProduct.category === undefined) {
+      alert('La categoria del producto no puede estar vacia');
+      return;
+    }else if(!updatedProduct.price || updatedProduct.price <= 0) {
+      alert('El precio no es valido');
+      return;
+    }
+
     if (isNewProduct) {
       handleProductCreate(updatedProduct);
     } else {
